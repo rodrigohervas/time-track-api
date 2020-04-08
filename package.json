@@ -29,5 +29,9 @@
   "directories": {
     "test": "test"
   },
-  "keywords": []
+  "keywords": [], 
+  "engines": {
+    "node": "v12.15.0", 
+    "npm": "6.13.4"
+  }
 }

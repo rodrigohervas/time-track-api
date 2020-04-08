@@ -10,7 +10,7 @@ function errorHandler(error, req, res, next) {
         }
     }
     else {
-        logger.error(error.message)
+        logger.error(error)
         response = {
             error: { message: error.message, status: error.status ? error.status: 500 }
         }

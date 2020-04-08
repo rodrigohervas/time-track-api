@@ -21,14 +21,18 @@ app.use(bodyParser.json())
 app.use(accessHandler)
 
 
-//HOME ENDPOINT
+//Home endpoint
 app.route('/')
     .get((req, res) => {
         res.status(200).json('Welcome to Time Track API')
     })
 
-//MODEL ENDPOINT
+//Users endpoint
 //app.route('/users', usersRouter)
+app.route('/users')
+        .get((req, res) => {
+            res.status(200).json('Users')
+        })
 
 
 app.use(errorHandler)

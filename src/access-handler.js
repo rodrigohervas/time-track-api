@@ -1,4 +1,4 @@
-require('dotenv').config()
+const config = require('./config')
 const logger = require('./logger')
 
 //SECURITY HANDLE MIDDLEWARE
@@ -9,7 +9,7 @@ function accessHandler(req, res, next) {
     if(req.path === '/' || req.path === '/about') {
         next()
     }
-    else if (!apiKey || apiKey.split(' ')[1] !== process.env.API_KEY) { //mandatory apiKey for the rest of the paths
+    else if (!apiKey || apiKey.split(' ')[1] !== config.API_KEY) { //mandatory apiKey for the rest of the paths
         logger.error(`Unauthorized request to path: ${req.path}`)
         next({ status: '401', message: 'Unauthorized request' })
     }
