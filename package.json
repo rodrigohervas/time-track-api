@@ -8,7 +8,7 @@
     "dev": "nodemon server.js",
     "test": "mocha --require test/setup.js",
     "predeploy": "npm audit",
-    "deploy": "npm predeploy && git push heroku master"
+    "deploy": "git push heroku master"
   },
   "author": "Rodrigo Hervas",
   "license": "ISC",
