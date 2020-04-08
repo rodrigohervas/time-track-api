@@ -27,6 +27,12 @@ app.route('/')
         res.status(200).json('Welcome to Time Track API')
     })
 
+//favicon.ico endpoint
+app.route('/favicon.ico')
+    .get((req, res) => {
+        res.status(204)
+    })
+
 //Users endpoint
 //app.route('/users', usersRouter)
 app.route('/users')
