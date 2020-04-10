@@ -8,6 +8,7 @@ const accessHandler = require('./access-handler')
 const { NODE_ENV } = require('./config')
 const logger = require('./logger')
 const errorHandler = require('./error-handler')
+const usersRouter = require('./api/users/users.router')
 
 const app = express()
 const morganOption = (NODE_ENV === 'production') ? 'tiny' : 'common'
@@ -21,14 +22,14 @@ app.use(bodyParser.json())
 app.use(accessHandler)
 
 
-//HOME ENDPOINT
+//Home endpoint
 app.route('/')
     .get((req, res) => {
         res.status(200).json('Welcome to Time Track API')
     })
 
-//MODEL ENDPOINT
-//app.route('/users', usersRouter)
+//Users endpoint
+app.use('/api/users', usersRouter)
 
 
 app.use(errorHandler)

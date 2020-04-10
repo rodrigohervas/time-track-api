@@ -1,2 +1,94 @@
-{"message":"Unauthorized request to path: /favicon.ico","level":"error"}
-{"message":"Unauthorized request","level":"error"}
+{"message":"username is mandatory","level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getUser","level":"error"}
+{"message":"username is mandatory","level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getUser","level":"error"}
+{"message":"username is mandatory","level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getUser","level":"error"}
+{"message":"username is mandatory","level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getUser","level":"error"}
+{"message":"username is mandatory","level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getUser","level":"error"}
+{"message":"username is mandatory","level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getUser","level":"error"}
+{"message":"password is mandatory","level":"error"}
+{"message":"username is mandatory","level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getUser","level":"error"}
+{"message":"username is mandatory","level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getUser","level":"error"}
+{"message":"username is mandatory","level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getUser","level":"error"}
+{"message":"username is mandatory","level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getUser","level":"error"}
+{"message":"username is mandatory","level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getUser","level":"error"}
+{"message":"username is mandatory","level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getUser","level":"error"}
+{"message":"username is mandatory","level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getUser","level":"error"}
+{"message":"username is mandatory","level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getUser","level":"error"}
+{"message":"username is mandatory","level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getUser","level":"error"}
+{"message":"password is invalid","level":"error"}
+{"message":"password is invalid","level":"error"}
+{"message":"password is invalid","level":"error"}
+{"message":"password is invalid","level":"error"}
+{"message":"password is invalid","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"password is invalid","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"insert into \"users\" (\"company_id\", \"password\", \"role_id\", \"username\") values ($1, $2, $3, $4) returning * - insert or update on table \"users\" violates foreign key constraint \"users_role_id_fkey\"","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"insert into \"users\" (\"company_id\", \"password\", \"role_id\", \"username\") values ($1, $2, $3, $4) returning * - insert or update on table \"users\" violates foreign key constraint \"users_role_id_fkey\"","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"insert into \"users\" (\"company_id\", \"password\", \"role_id\", \"username\") values ($1, $2, $3, $4) returning * - insert or update on table \"users\" violates foreign key constraint \"users_role_id_fkey\"","level":"error"}
+{"message":"insert into \"users\" (\"company_id\", \"password\", \"role_id\", \"username\") values ($1, $2, $3, $4) returning * - duplicate key value violates unique constraint \"users_pkey\"","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"insert into \"users\" (\"company_id\", \"password\", \"role_id\", \"username\") values ($1, $2, $3, $4) returning * - insert or update on table \"users\" violates foreign key constraint \"users_role_id_fkey\"","level":"error"}
+{"message":"insert into \"users\" (\"company_id\", \"password\", \"role_id\", \"username\") values ($1, $2, $3, $4) returning * - insert or update on table \"users\" violates foreign key constraint \"users_role_id_fkey\"","level":"error"}
+{"message":"insert into \"users\" (\"company_id\", \"password\", \"role_id\", \"username\") values ($1, $2, $3, $4) returning * - insert or update on table \"users\" violates foreign key constraint \"users_role_id_fkey\"","level":"error"}
+{"message":"insert into \"users\" (\"company_id\", \"password\", \"role_id\", \"username\") values ($1, $2, $3, $4) returning * - insert or update on table \"users\" violates foreign key constraint \"users_role_id_fkey\"","level":"error"}
+{"message":"insert into \"users\" (\"company_id\", \"password\", \"role_id\", \"username\") values ($1, $2, $3, $4) returning * - insert or update on table \"users\" violates foreign key constraint \"users_role_id_fkey\"","level":"error"}
+{"message":"insert into \"users\" (\"company_id\", \"password\", \"role_id\", \"username\") values ($1, $2, $3, $4) returning * - insert or update on table \"users\" violates foreign key constraint \"users_role_id_fkey\"","level":"error"}
+{"message":"insert into \"users\" (\"company_id\", \"password\", \"role_id\", \"username\") values ($1, $2, $3, $4) returning * - insert or update on table \"users\" violates foreign key constraint \"users_role_id_fkey\"","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"insert into \"users\" (\"company_id\", \"password\", \"role_id\", \"username\") values ($1, $2, $3, $4) returning * - insert or update on table \"users\" violates foreign key constraint \"users_role_id_fkey\"","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"insert into \"users\" (\"company_id\", \"password\", \"role_id\", \"username\") values ($1, $2, $3, $4) returning * - duplicate key value violates unique constraint \"users_pkey\"","level":"error"}
+{"message":"insert into \"users\" (\"company_id\", \"password\", \"role_id\", \"username\") values ($1, $2, $3, $4) returning * - duplicate key value violates unique constraint \"users_pkey\"","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"insert into \"users\" (\"company_id\", \"password\", \"role_id\", \"username\") values ($1, $2, $3, $4) returning * - duplicate key value violates unique constraint \"users_pkey\"","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}
+{"message":"User doesn't exist","level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getUser","level":"error"}

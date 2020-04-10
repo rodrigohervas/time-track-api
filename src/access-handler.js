@@ -6,7 +6,7 @@ function accessHandler(req, res, next) {
     const apiKey = req.get('authorization')
 
     //avoid apiKey on home ('/') or about ('/about') paths
-    if(req.path === '/' || req.path === '/about') {
+    if(req.path === '/' || req.path === '/about' || req.path ==='/favicon.ico') {
         next()
     }
     else if (!apiKey || apiKey.split(' ')[1] !== process.env.API_KEY) { //mandatory apiKey for the rest of the paths
