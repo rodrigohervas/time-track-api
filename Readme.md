@@ -41,4 +41,4 @@ https://github.com/rodrigohervas/time-track-client
 
 ## Live Site
 
-Coming Soon!
+https://timetrackrh.herokuapp.com/
