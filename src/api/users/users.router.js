@@ -10,6 +10,10 @@ usersRouter
     .put(UsersService.updateByUsername)
     .patch(UsersService.updateByUsername)
     .delete(UsersService.deleteByUsername)
+
+usersRouter
+    .route('/login')
+    .post(UsersService.getByUsername)
     
 usersRouter
     .route('/all')

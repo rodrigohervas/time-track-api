@@ -6,6 +6,7 @@ const logger = require('./../../logger')
 
 const saltRounds = config.SALT_ROUNDS
 const usersTable = 'users'
+const companiesTable = 'companies'
 const serializeUsers = (user) => (
     {
         id: user.id, 
@@ -73,35 +74,43 @@ const UsersService = {
 
     post(req, res, next) {
         try{
-            const { username, password, role_id, company_id } = req.body
-            
-            bcrypt.hash(password, parseInt(saltRounds))
-                    .then( hash => {
-                        const user = {
-                            username: username, 
-                            password: hash, 
-                            role_id: role_id,
-                            company_id: company_id
-                        }
+            const { username, password, role_id, company } = req.body
 
-                        validate(user)
+            insertCompany(next, company)
+            .then(company => {
+                
+                bcrypt.hash(password, parseInt(saltRounds))
+                        .then( hash => {
+                            const user = {
+                                username: username, 
+                                password: hash, 
+                                role_id: role_id,
+                                company_id: company.id
+                            }
 
-                        return db
-                            .insert(user)
-                            .into(usersTable)
-                            .returning('*')
-                            .then(users => {
-                                const user = users[0]
-                                res.status(201).json(serializeUsers(user))
-                            })
-                            .catch(error => {
-                                next( { message: error.message, status: error.status } )
-                            })
-                    })
-                    .catch(error => {
-                        logger.error(`${error.message} at users.service.post`)
-                        next( { message: error.message, status: error.status } )
-                    })
+                            validate(user)
+
+                            return db
+                                .insert(user)
+                                .into(usersTable)
+                                .returning('*')
+                                .then(users => {
+                                    const user = users[0]
+                                    res.status(201).json(serializeUsers(user))
+                                })
+                                .catch(error => {
+                                    next( { message: error.message, status: error.status } )
+                                })
+                        })
+                        .catch(error => {
+                            logger.error(`${error.message} at users.service.post`)
+                            next( { message: error.message, status: error.status } )
+                        })
+            })
+            .catch(error => {
+                logger.error(`${error.message} at users.service.post`)
+                next( { message: error.message, status: error.status } )
+            })
                 }
                 catch(error) {
                     next({
@@ -160,7 +169,7 @@ const UsersService = {
             if(!password) {
                 next({message: 'password is mandatory', status: 400})
             }
-
+            
             return db
                 .select('*')
                 .from(usersTable)
@@ -185,7 +194,7 @@ const UsersService = {
                             })
                 })
                 .catch( error => {
-                    logger.error(`${error.message} at users.service.getUser`)
+                    logger.error(`${error.message} at users.service.getByUsername`)
                     next({ message: error.message, status: error.status})
                 })
         }
@@ -316,6 +325,33 @@ const UsersService = {
                 internalMessage: error.message
             })
         }
+    }
+}
+
+const insertCompany = (next, company) => {
+    try {
+        return db
+                .insert({
+                    name: company
+                })
+                .into(companiesTable)
+                .returning('*')
+                .then(companies => {
+                    const company = companies[0]
+                    return company
+                })
+                .catch(error => {
+                    logger.error(`${error.message} at users.service.insertCompany`)
+                    next( { message: error.message, status: error.status } )
+                })
+    }
+    catch(error) {
+        throw({
+            message: 'error creating company', 
+            status: error.status, 
+            loc: 'at users.service.insertCompany', 
+            internalMessage: error.message
+        })
     }
 }
 
