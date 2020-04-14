@@ -9,6 +9,8 @@ const { NODE_ENV } = require('./config')
 const logger = require('./logger')
 const errorHandler = require('./error-handler')
 const usersRouter = require('./api/users/users.router')
+const timeframesRouter = require('./api/timeframes/timeframes.router')
+const ptosRouter = require('./api/ptos/ptos.router')
 
 const app = express()
 const morganOption = (NODE_ENV === 'production') ? 'tiny' : 'common'
@@ -36,6 +38,12 @@ app.route('/favicon.ico')
 
 //Users endpoint
 app.use('/api/users', usersRouter)
+
+//Timeframes endpoint
+app.use('/api/timeframes', timeframesRouter)
+
+//PTOs endpoint
+app.use('/api/ptos', ptosRouter)
 
 
 app.use(errorHandler)

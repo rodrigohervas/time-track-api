@@ -1,0 +1,44 @@
+{"message":"timeframe is not defined at ptos.service.getById","level":"error"}
+{"message":"timeframe is not defined","level":"error"}
+{"message":"timeframe is not defined at ptos.service.getById","level":"error"}
+{"message":"timeframe is not defined","level":"error"}
+{"message":"Pto doesn't exist at ptos.service.getById","level":"error"}
+{"message":"Pto doesn't exist","status":404,"level":"error"}
+{"message":"id is mandatory and must be a valid number","status":400,"loc":"at ptos.service.All","internalMessage":"id is mandatory and must be a valid number","level":"error"}
+{"message":"error creating timeframe","status":400,"loc":"at timeframes.service.post","internalMessage":"date is mandatory","level":"error"}
+{"message":"username is mandatory","status":400,"level":"error"}
+{"message":"Undefined binding(s) detected when compiling FIRST. Undefined column(s): [username] query: select * from \"users\" where \"username\" = ? limit ? at users.service.getByUsername","level":"error"}
+{"message":"Pto doesn't exist at ptos.service.getById","level":"error"}
+{"message":"Pto doesn't exist","status":404,"level":"error"}
+{"message":"Pto doesn't exist at ptos.service.getById","level":"error"}
+{"message":"Pto doesn't exist","status":404,"level":"error"}
+{"message":"Pto doesn't exist at ptos.service.getById","level":"error"}
+{"message":"Pto doesn't exist","status":404,"level":"error"}
+{"message":"Timeframe doesn't exist at timeframes.service.getById","level":"error"}
+{"message":"Timeframe doesn't exist","status":404,"level":"error"}
+{"message":"Pto doesn't exist at ptos.service.getById","level":"error"}
+{"message":"Pto doesn't exist","status":404,"level":"error"}
+{"message":"Pto doesn't exist at ptos.service.getById","level":"error"}
+{"message":"Pto doesn't exist","status":404,"level":"error"}
+{"message":"Pto doesn't exist at ptos.service.getById","level":"error"}
+{"message":"Pto doesn't exist","status":404,"level":"error"}
+{"message":"Pto doesn't exist at ptos.service.getById","level":"error"}
+{"message":"Pto doesn't exist","status":404,"level":"error"}
+{"message":"Pto doesn't exist at ptos.service.getById","level":"error"}
+{"message":"Pto doesn't exist","status":404,"level":"error"}
+{"message":"Timeframe doesn't exist at timeframes.service.getById","level":"error"}
+{"message":"Timeframe doesn't exist","status":404,"level":"error"}
+{"message":"User doesn't exist","status":404,"level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getByUsername","level":"error"}
+{"message":"Pto doesn't exist at ptos.service.getById","level":"error"}
+{"message":"Pto doesn't exist","status":404,"level":"error"}
+{"message":"Timeframe doesn't exist at timeframes.service.getById","level":"error"}
+{"message":"Timeframe doesn't exist","status":404,"level":"error"}
+{"message":"User doesn't exist","status":404,"level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getByUsername","level":"error"}
+{"message":"Pto doesn't exist at ptos.service.getById","level":"error"}
+{"message":"Pto doesn't exist","status":404,"level":"error"}
+{"message":"Timeframe doesn't exist at timeframes.service.getById","level":"error"}
+{"message":"Timeframe doesn't exist","status":404,"level":"error"}
+{"message":"User doesn't exist","status":404,"level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getByUsername","level":"error"}

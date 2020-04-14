@@ -166,7 +166,7 @@ describe('POST /api/users', () => {
                 .expect(201)
                 .expect( res => {
                     const usr = res.body
-                    console.log('USER: ', usr)
+                    //console.log('USER: ', usr)
                     expect(usr.id).to.eql(user.id)
                     expect(usr.username).to.eql(user.username)
                     expect(usr.role_id).to.eql(user.role_id)
