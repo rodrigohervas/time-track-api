@@ -155,9 +155,9 @@ const TimeframesService = {
                 starttime: starttime, 
                 finishtime: finishtime, 
                 comments: comments, 
-                user_id
+                user_id: user_id
             }
-
+            
             if(!id) {
                 next({message: 'id is mandatory', status: 400})
             }
