@@ -23,7 +23,7 @@ INSERT INTO users (username, password, role_id, company_id)
 VALUES
   ('michael@jones.com', '$2b$10$s/9a9ktziiL7CptxBXomMuG7z27nXC0UBrNYYlkE1aQzd9QNEmfyW', '1', '1'), --password: michael
   ('mary@jones.com', '$2b$10$.VAA.Ljyex1pu8fPnAu31OfYbhfCp.SpDHIkPb91HUc03LQALYIx.', '1', '2'), --password: mary
-  ('paul@jones.com', '$2b$10$HCbyQB3bcONO7UqkyFQNh.3jSK.CCOeF8iGJ1FFBeMgyse6mW.YxC', '2', '1'); --password: paul
+  ('paul@jones.com', '$2b$10$HCbyQB3bcONO7UqkyFQNh.3jSK.CCOeF8iGJ1FFBeMgyse6mW.YxC', '2', '1'); --password: test
 
 
 INSERT INTO timeframes (date, starttime, finishtime, comments, user_id)
