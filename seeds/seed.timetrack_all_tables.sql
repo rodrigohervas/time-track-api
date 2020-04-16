@@ -4,6 +4,7 @@ TRUNCATE users RESTART IDENTITY CASCADE;
 TRUNCATE timeframes RESTART IDENTITY CASCADE;
 TRUNCATE ptotypes RESTART IDENTITY CASCADE;
 TRUNCATE ptos RESTART IDENTITY CASCADE;
+TRUNCATE ptodays RESTART IDENTITY CASCADE;
 
 INSERT INTO companies (name)
 VALUES
@@ -87,6 +88,14 @@ VALUES
     (2, 3, '2020-04-03', '2020-04-04', 'comment to request 8'), 
     (2, 1, '2020-04-04', '2020-04-05', 'comment to request 9'), 
     (2, 2, '2020-01-28', '2020-01-05', 'comment to request 10');
+
+
+INSERT INTO ptodays (user_id, totaldays, useddays, availabledays)
+VALUES
+    (1, 28, 10, 18), 
+    (2, 26, 15, 11), 
+    (3, 22, 10, 12);
+    
 
 
       --execute: psql -U [dbAdmin] -d [dbName] -f ./seeds/seed.timetrack_all_tables.sqlq

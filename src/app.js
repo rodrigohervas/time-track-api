@@ -11,6 +11,7 @@ const errorHandler = require('./error-handler')
 const usersRouter = require('./api/users/users.router')
 const timeframesRouter = require('./api/timeframes/timeframes.router')
 const ptosRouter = require('./api/ptos/ptos.router')
+const ptoDaysRouter = require('./api/ptoDays/ptoDays.router')
 
 const app = express()
 const morganOption = (NODE_ENV === 'production') ? 'tiny' : 'common'
@@ -44,6 +45,9 @@ app.use('/api/timeframes', timeframesRouter)
 
 //PTOs endpoint
 app.use('/api/ptos', ptosRouter)
+
+//PtoDays endpoint
+app.use('/api/ptodays', ptoDaysRouter)
 
 
 app.use(errorHandler)

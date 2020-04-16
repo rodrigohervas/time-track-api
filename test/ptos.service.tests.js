@@ -62,7 +62,7 @@ const formatPto = (pto) => (
     }
 )
 
-describe('GET /api/posts', () => {
+describe('GET /api/ptos', () => {
     
     insertTestData()
 
