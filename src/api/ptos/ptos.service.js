@@ -151,6 +151,7 @@ const PtoService = {
             const { user_id, type, startdate, finishdate, comments,  } = req.body
 
             const pto = {
+                id: id, 
                 user_id: user_id, 
                 type: type, 
                 startdate: startdate, 

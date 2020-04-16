@@ -1,0 +1,3 @@
+{"message":"select * from \"ptos\" where \"user_id\" = $1 - invalid input syntax for integer: \"null\" at ptos.service.getAllByUserId","level":"error"}
+{"message":"select * from \"ptos\" where \"user_id\" = $1 - invalid input syntax for integer: \"null\"","level":"error"}
+{"message":"error updating pto","status":400,"loc":"at ptos.service.updateById","internalMessage":"type is mandatory","level":"error"}
