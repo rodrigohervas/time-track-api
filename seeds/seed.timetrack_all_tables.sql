@@ -87,14 +87,14 @@ VALUES
     (2, 2, '2020-03-02', '2020-03-03', 'comment to request 7'), 
     (2, 3, '2020-04-03', '2020-04-04', 'comment to request 8'), 
     (2, 1, '2020-04-04', '2020-04-05', 'comment to request 9'), 
-    (2, 2, '2020-01-28', '2020-01-05', 'comment to request 10');
+    (2, 2, '2020-02-01', '2020-02-05', 'comment to request 10');
 
 
 INSERT INTO ptodays (user_id, totaldays, useddays, availabledays)
 VALUES
-    (1, 28, 10, 18), 
-    (2, 26, 15, 11), 
-    (3, 22, 10, 12);
+    (1, 28, 11, 17), 
+    (2, 26, 8, 18), 
+    (3, 22, 0, 22);
     
 
 
