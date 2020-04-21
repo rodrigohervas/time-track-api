@@ -42,9 +42,9 @@ The API has the following endpoints:
 
 * ptodays: CRUD pto days summary for a user
 
-#### users endpoint: 
+### users endpoint: 
 
-##### post => /api/users/login
+#### post => /api/users/login
 
 Returns: a user object for the username and password
 
@@ -53,7 +53,7 @@ Requires: { username, password }
 * username: string
 * password: string
 
-##### post => /api/users
+#### post => /api/users
 
 Requires: { username, password, role_id, company }
 
@@ -64,7 +64,7 @@ Returns: the user object created
 * role_id: integer
 * company: string
 
-##### put => /api/users
+#### put => /api/users
 
 Returns: the user object updated
 
@@ -75,7 +75,7 @@ Requires: { username, password, role_id, company_id }
 * role_id: integer
 * company_id: integer
 
-##### delete => /api/users
+#### delete => /api/users
 
 Returns: a string confirming the user is deleted
 
@@ -85,9 +85,9 @@ Requires: {username, password}
 * password: string
 
 
-#### timeframes endpoint: 
+### timeframes endpoint: 
 
-##### get => /api/timeframes/:id
+#### get => /api/timeframes/:id
 
 Returns: a timeframe object for the timeframe id
 
@@ -95,7 +95,7 @@ Requires: { id }
 
 * id: integer
 
-##### post => /api/timeframes/
+#### post => /api/timeframes/
 
 Returns: the timeframe created
 
@@ -107,7 +107,7 @@ Requires: { date, starttime, finishtime, comments, user_id }
 * comments: string
 * user_id: int
 
-##### post => /api/timeframes/:id
+#### post => /api/timeframes/:id
 
 Returns: array of timeframes objects for the user id
 
@@ -115,7 +115,7 @@ Requires: { id }
 
 * id: integer
 
-##### put => /api/timeframes/:id
+#### put => /api/timeframes/:id
 
 Returns: the timeframe updated
 
@@ -129,15 +129,15 @@ Requires (body): { date, starttime, finishtime, comments, user_id }
 * comments: string
 * user_id: int
 
-##### delete => /api/timeframes/:id
+#### delete => /api/timeframes/:id
 
 Requires: { id }
 
 * id: integer
 
-#### ptos endpoint: 
+### ptos endpoint: 
 
-##### post => /api/ptos/:id
+#### post => /api/ptos/:id
 
 Returns: list of ptos for the user id
 
@@ -145,7 +145,7 @@ Requires: { id }
 
 * id: integer
 
-##### post => /api/ptos/
+#### post => /api/ptos/
 
 Returns: the pto created
 
@@ -157,7 +157,7 @@ Requires: { user_id, type, startdate, finishdate, comments  }
 * finishdate: date
 * comments: string
 
-##### get => /api/ptos/:id
+#### get => /api/ptos/:id
 
 Returns: a pto object for the id
 
@@ -165,7 +165,7 @@ Requires: { id }
 
 * id: integer
 
-##### put => /api/ptos/:id
+### put => /api/ptos/:id
 
 Returns: the pto updated
 
@@ -178,7 +178,7 @@ Requires (body): { user_id, type, startdate, finishdate, comments  }
 * finishdate: date
 * comments: string
 
-##### delete => /api/ptos/:id
+#### delete => /api/ptos/:id
 
 Returns: an string confirming the pto deleted
 
@@ -186,9 +186,9 @@ Requires: { id }
 
 * id: integer 
 
-#### ptodays endpoint: 
+### ptodays endpoint: 
 
-##### post => /api/ptodays/
+#### post => /api/ptodays/
 
 Returns: the ptodays object created
 
@@ -199,7 +199,7 @@ Requires: { user_id, totaldays, useddays, availabledays  }
 * useddays: integer
 * availabledays: integer
 
-##### get => /api/ptodays/:user_id
+#### get => /api/ptodays/:user_id
 
 Returns: an array of ptodays objects for the given user_id
 
@@ -207,7 +207,7 @@ Requires: {user_id}
 
 * user_id: integer
 
-##### put => /api/ptodays/:user_id
+#### put => /api/ptodays/:user_id
 
 Returns: the updated ptodays object
 
@@ -219,7 +219,7 @@ Requires (body): totaldays, useddays, availabledays
 * useddays: integer
 * availabledays: integer
 
-##### delete => /api/ptodays/:user_id
+#### delete => /api/ptodays/:user_id
 
 Returns: a string confirming the user has been deleted
 
