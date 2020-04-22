@@ -8,7 +8,7 @@ const PtoDaysService = require('./ptoDays.service')
 const ptoDaysRouter = express.Router()
 
 
-//plain route
+//regular route
 ptoDaysRouter
         .route('/')
         .post(PtoDaysService.post)

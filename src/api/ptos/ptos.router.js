@@ -1,14 +1,18 @@
 const express = require('express')
 const PtosService = require('./ptos.service')
 
+/**
+ * ptos Routing middleware
+ */
 
 const ptosRouter = express.Router()
 
+//regular route
 ptosRouter
         .route('/')
         .post(PtosService.post)
 
-
+//route for ptodays/id
 ptosRouter
         .route('/:id')
         .all(PtosService.All)

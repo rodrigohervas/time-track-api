@@ -3,7 +3,13 @@ const config = require('../../config')
 const xss = require('xss')
 const logger = require('./../../logger')
 
+//pto table name
 const ptosTable = 'ptos'
+
+/**
+ * XSS validator
+ * @param {object} pto 
+ */
 const serialize = (pto) => (
     {
         id: pto.id, 
@@ -15,6 +21,10 @@ const serialize = (pto) => (
     }
 )
 
+/**
+ * Validator function to validate the object pto has valid data
+ * @param {object} ptoDays 
+ */
 const validate = (pto) => {
     for (const [key, value] of Object.entries(pto)) {
         if(!value) {
@@ -23,8 +33,17 @@ const validate = (pto) => {
     }
 }
 
+/**
+ * PtoService
+ */
 const PtoService = {
 
+    /**
+     * All: validates that requests with 'GET', 'PUT', 'PATCH', 'DELETE' have a valid user id
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     All(req, res, next){
         try {
             const method = req.method
@@ -47,6 +66,12 @@ const PtoService = {
         }
     },
 
+    /**
+     * getAllByUserId: returns a list of ptos for the user id
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     getAllByUserId(req, res, next) {
         try {
             const {id} = req.params
@@ -75,6 +100,12 @@ const PtoService = {
         }
     },
 
+    /**
+     * getById: returns a pto for the pto id
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     getById(req, res, next) {
         try {
             const {id} = req.params
@@ -108,6 +139,12 @@ const PtoService = {
         }
     },
 
+    /**
+     * post: creates a pto in the DB and returns it
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     post(req, res, next) {
         try{
             const { user_id, type, startdate, finishdate, comments,  } = req.body
@@ -145,6 +182,12 @@ const PtoService = {
         }
     },
 
+    /**
+     * updates a pto in the DB for the pto id and returns it
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     updateById(req, res, next) {
         try {
             const { id } = req.params
@@ -193,6 +236,12 @@ const PtoService = {
         }
     }, 
 
+    /**
+     * deleteById: deletes a pto in the DB for the pto id and returns a confirmation message
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     deleteById(req, res, next) {
         try {
             const {id} = req.params
