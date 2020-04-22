@@ -3,7 +3,13 @@ const config = require('../../config')
 const xss = require('xss')
 const logger = require('./../../logger')
 
+//timeframes table
 const timeframesTable = 'timeframes'
+
+/**
+ * XSS validator
+ * @param {object} timeframe 
+ */
 const serialize = (timeframe) => (
     {
         id: timeframe.id, 
@@ -15,6 +21,10 @@ const serialize = (timeframe) => (
     }
 )
 
+/**
+ * Validator function to validate the object timeframe has valid data
+ * @param {object} timeframe 
+ */
 const validate = (timeframe) => {
     for (const [key, value] of Object.entries(timeframe)) {
         if(!value) {
@@ -23,8 +33,17 @@ const validate = (timeframe) => {
     }
 }
 
+/**
+ * TimeframesService
+ */
 const TimeframesService = {
 
+    /**
+     * validates that requests with 'GET', 'PUT', 'PATCH', 'DELETE' have a valid user id
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     All(req, res, next){
         try {
             const method = req.method
@@ -47,6 +66,12 @@ const TimeframesService = {
         }
     },
 
+    /**
+     * getAllByUserId: returns a list of timeframes for the user id
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     getAllByUserId(req, res, next) {
         try {
             const {id} = req.params
@@ -75,6 +100,12 @@ const TimeframesService = {
         }
     },
 
+    /**
+     * getById: gets a timeframe for the timeframe id
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     getById(req, res, next) {
         try {
             const {id} = req.params
@@ -108,6 +139,12 @@ const TimeframesService = {
         }
     },
 
+    /**
+     * post: creates a timeframe in the DB for the user id and returns it
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     post(req, res, next) {
         try{
             const { date, starttime, finishtime, comments, user_id } = req.body
@@ -145,6 +182,12 @@ const TimeframesService = {
         }
     },
 
+    /**
+     * updateById: updates a timeframe in the DB for the timeframe id and returns it
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     updateById(req, res, next) {
         try {
             const { id } = req.params
@@ -192,6 +235,12 @@ const TimeframesService = {
         }
     }, 
 
+    /**
+     * deleteById: deletes a timeframe in the DB for the timeframe id and returns a confirmation message
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     deleteById(req, res, next) {
         try {
             const {id} = req.params

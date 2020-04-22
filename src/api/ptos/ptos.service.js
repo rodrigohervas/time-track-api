@@ -23,7 +23,7 @@ const serialize = (pto) => (
 
 /**
  * Validator function to validate the object pto has valid data
- * @param {object} ptoDays 
+ * @param {object} pto 
  */
 const validate = (pto) => {
     for (const [key, value] of Object.entries(pto)) {

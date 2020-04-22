@@ -1,14 +1,19 @@
 const express = require('express')
 const TimeframesService = require('./timeframes.service')
 
+/**
+ * Timeframes Routing middleware
+ */
 
 const timeframesRouter = express.Router()
 
+//regular route
 timeframesRouter
         .route('/')
         .post(TimeframesService.post)
 
 
+//route for timeframes/:id
 timeframesRouter
         .route('/:id')
         .all(TimeframesService.All)
