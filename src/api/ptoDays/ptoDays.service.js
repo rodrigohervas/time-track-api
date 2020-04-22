@@ -5,6 +5,10 @@ const logger = require('./../../logger')
 
 const ptoDaysTable = 'ptodays'
 
+/**
+ * Validator function to validate the object ptoDays has valid data
+ * @param {object} ptoDays 
+ */
 const validate = (ptoDays) => {
     for (const [key, value] of Object.entries(ptoDays)) {
         if(!value) {
@@ -13,8 +17,17 @@ const validate = (ptoDays) => {
     }
 }
 
+/**
+ * PtoDaysService
+ */
 const PtoDaysService = {
 
+    /**
+     * All: validates that requests with 'GET', 'PUT', 'PATCH', 'DELETE' have a valid user_id
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     All(req, res, next){
         try {
             const method = req.method
@@ -37,6 +50,12 @@ const PtoDaysService = {
         }
     },
 
+    /**
+     * getByUserId: returns a list of ptoDays for a user_id
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next  
+     */
     getByUserId(req, res, next) {
         try {
             const {user_id} = req.params
@@ -70,6 +89,12 @@ const PtoDaysService = {
         }
     },
 
+    /**
+     * post: creates a ptoDays object in the DB and returns it
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     post(req, res, next) {
         try{
             const { user_id, totaldays, useddays, availabledays  } = req.body
@@ -106,6 +131,12 @@ const PtoDaysService = {
         }
     },
 
+    /**
+     * updateByUserId: updates a ptoDays object in the DB and returns it
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     updateByUserId(req, res, next) {
         try {
             const { user_id } = req.params
@@ -148,6 +179,12 @@ const PtoDaysService = {
         }
     }, 
 
+    /**
+     * deleteByUserId: deletes a ptoDays object in the DB and returns it
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     deleteByUserId(req, res, next) {
         try {
             const {user_id} = req.params
