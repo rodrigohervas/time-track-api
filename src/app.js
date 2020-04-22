@@ -14,11 +14,19 @@ const ptosRouter = require('./api/ptos/ptos.router')
 const ptoDaysRouter = require('./api/ptoDays/ptoDays.router')
 
 const app = express()
+//configure morgan option
 const morganOption = (NODE_ENV === 'production') ? 'tiny' : 'common'
 
+//add logging middleware
 app.use(morgan(morganOption))
+
+//set helmet for easy error viewing
 app.use(helmet())
+
+//add CORS middleware
 app.use(cors())
+
+//add JSON body parsing middleware
 app.use(bodyParser.json())
 
 //SECURITY HANDLE MIDDLEWARE
@@ -50,6 +58,7 @@ app.use('/api/ptos', ptosRouter)
 app.use('/api/ptodays', ptoDaysRouter)
 
 
+//error handling middleware
 app.use(errorHandler)
 
 
