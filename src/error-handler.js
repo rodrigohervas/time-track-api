@@ -1,7 +1,13 @@
 const { NODE_ENV } = require('./config')
 const logger = require('./logger')
 
-//Error Handling middleware
+/**
+ * Error Handling middleware: logs and handles errors por each request
+ * @param {object} error 
+ * @param {object} req 
+ * @param {object} res 
+ * @param {function} next 
+ */
 function errorHandler(error, req, res, next) {
     let response
     if (NODE_ENV === 'production') {
