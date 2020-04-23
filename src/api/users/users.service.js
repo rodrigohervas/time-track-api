@@ -4,9 +4,19 @@ const bcrypt = require('bcrypt')
 const config = require('./../../config')
 const logger = require('./../../logger')
 
+//salt rounds for password hashing
 const saltRounds = config.SALT_ROUNDS
+
+//users table
 const usersTable = 'users'
+
+//companies table
 const companiesTable = 'companies'
+
+/**
+ * XSS validator to validate user object has no invalid data
+ * @param {object} user 
+ */
 const serializeUsers = (user) => (
     {
         id: user.id, 
@@ -17,6 +27,10 @@ const serializeUsers = (user) => (
     }
 )
 
+/**
+ * Validator function to validate the object user has valid data
+ * @param {object} user 
+ */
 const validate = (user) => {
     for (const [key, value] of Object.entries(user)) {
         if(!value) {
@@ -25,8 +39,17 @@ const validate = (user) => {
     }
 }
 
+/**
+ * UsersService
+ */
 const UsersService = {
 
+    /**
+     * All: validates that requests with 'GET', 'PUT', 'PATCH', 'DELETE' have a valid user id
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     All(req, res, next){
         try {
             const method = req.method
@@ -49,6 +72,12 @@ const UsersService = {
         }
     },
 
+    /**
+     * getAll: returns all the users
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     getAll(req, res, next) {
         try {
             return db
@@ -72,6 +101,12 @@ const UsersService = {
         }
     },
 
+    /**
+     * post: insert a user and a company in the DB asynchronously, and returns them. The password is inserted hashed.
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     post(req, res, next) {
         try{
             const { username, password, role_id, company } = req.body
@@ -122,6 +157,12 @@ const UsersService = {
                 }
     },
 
+    /**
+     * postHashSync: insert a user in the DB synchronously, and returns it. The password is inserted hashed.
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     postHashSync(req, res, next) {
         try{
             const { username, password, role_id, company_id } = req.body
@@ -158,6 +199,12 @@ const UsersService = {
         }
     },
 
+    /**
+     * getByUsername: returns a username by the given username/password.
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     getByUsername(req, res, next) {
         try {
             const { username, password } = req.body
@@ -208,6 +255,12 @@ const UsersService = {
         }
     },
 
+    /**
+     * updateByUsername" updates and returns a username by the given username/password.
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     updateByUsername(req, res, next) { 
         try {
             const { username, password, role_id, company_id } = req.body
@@ -288,6 +341,12 @@ const UsersService = {
             }
     },
 
+    /**
+     * deleteByUsername: deletes and returns a confirmation message by the given username/password.
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
     deleteByUsername(req, res, next){
         try {
             const {username, password} = req.body
@@ -328,6 +387,11 @@ const UsersService = {
     }
 }
 
+/**
+ * insertCompany: inserts a company in the DB and returns it
+ * @param {function} next 
+ * @param {string} company
+ */
 const insertCompany = (next, company) => {
     try {
         return db
