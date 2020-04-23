@@ -20,7 +20,7 @@ const morganOption = (NODE_ENV === 'production') ? 'tiny' : 'common'
 //add logging middleware
 app.use(morgan(morganOption))
 
-//set helmet for easy error viewing
+//set helmet to secure app by setting various HHTP headers
 app.use(helmet())
 
 //add CORS middleware
