@@ -22,9 +22,9 @@ usersRouter
     .post(UsersService.getByUsername) //get user for a username
 
 //route for users/all
-usersRouter
-    .route('/all')
-    .get(UsersService.getAll) //get all users
+// usersRouter
+//     .route('/all')
+//     .get(UsersService.getAll) //get all users
 
 //router for users/:id
 usersRouter
