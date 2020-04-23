@@ -41,7 +41,7 @@ describe('GET /api/users', () => {
             })
     })
     
-    it('GET /api/users/all responds with 200 and all of the users', () => {
+    it.skip('GET /api/users/all responds with 200 and all of the users', () => {
         return supertest(app)
                 .get('/api/users/all')
                 .set('Authorization', `Bearer ${process.env.API_KEY}`)
