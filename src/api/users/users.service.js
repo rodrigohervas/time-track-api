@@ -13,6 +13,9 @@ const usersTable = 'users'
 //companies table
 const companiesTable = 'companies'
 
+//ptoDays table
+const ptoDaysTable = 'ptodays';
+
 /**
  * XSS validator to validate user object has no invalid data
  * @param {object} user 
@@ -156,6 +159,85 @@ const UsersService = {
                     })
                 }
     },
+
+
+    /**
+     * postAsync: inserts a user, a company and default PtoDays in the DB asynchronously, and returns them. The password is inserted hashed.
+     * @param {object} req 
+     * @param {object} res 
+     * @param {function} next 
+     */
+    async postAsync(req, res, next) {
+        try{
+            const { username, password, role_id, company } = req.body;
+
+            //insert company
+            const userCompany = await insertCompany(next, company);
+
+            //hash password
+            const hash = await bcrypt.hash(password, parseInt(saltRounds));
+
+            //create user object
+            const user = {
+                username: username, 
+                password: hash, 
+                role_id: role_id,
+                company_id: userCompany.id
+            };
+
+            //validate user data
+            validate(user);
+            
+            //insert user
+            const users = await db
+                                  .insert(user)
+                                  .into(usersTable)
+                                  .returning('*')
+                                  .catch(error => {
+                                      logger.error(`${error.message} at insert User in users.service.postAsync`)
+                                      next( { message: error.message, status: error.status } )
+                                  });
+            
+            //validate user insert
+            const newUser = users[0];
+            if(!newUser) {
+                throw ( {message: `User couldn't be created`, status: 404} );
+            }
+            
+            //Add default pto days
+            const ptoDaysData = {
+                user_id: newUser.id, 
+                totaldays: config.DEFAULT_TOTAL_DAYS, 
+                useddays: config.DEFAULT_USED_DAYS, 
+                availabledays: config.DEFAULT_AVAILABLE_DAYS
+            };
+
+            //validate default pto days data
+            validate(ptoDaysData);
+
+            //insert default pto days
+            const ptoDays = await db
+                                    .insert(ptoDaysData)
+                                    .into(ptoDaysTable)
+                                    .returning('*')
+                                    .catch(error => {
+                                        logger.error(`${error.message} at insert default Pto Days in users.service.postAsync`)
+                                        next( { message: error.message, status: error.status } )
+                                    });
+            
+            //return created user
+            res.status(201).json(serializeUsers(newUser));
+        }
+        catch(error) {
+            next({
+                message: 'error creating user', 
+                status: error.status, 
+                loc: 'at users.service.postAsync', 
+                internalMessage: error.message
+            })
+        }
+    },
+
 
     /**
      * postHashSync: insert a user in the DB synchronously, and returns it. The password is inserted hashed.

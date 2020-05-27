@@ -1,0 +1,8 @@
+{"message":"PtoDays doesn't exist at ptoDays.service.getByUserId","level":"error"}
+{"message":"PtoDays doesn't exist","status":404,"level":"error"}
+{"message":"Pto doesn't exist at ptos.service.getById","level":"error"}
+{"message":"Pto doesn't exist","status":404,"level":"error"}
+{"message":"Timeframe doesn't exist at timeframes.service.getById","level":"error"}
+{"message":"Timeframe doesn't exist","status":404,"level":"error"}
+{"message":"User doesn't exist","status":404,"level":"error"}
+{"message":"Cannot read property 'password' of undefined at users.service.getByUsername","level":"error"}

@@ -11,7 +11,7 @@ const usersRouter = express.Router()
 usersRouter
     .route('/')
     .get(UsersService.getByUsername)
-    .post(UsersService.post) //post new user
+    .post(UsersService.postAsync) //post new user
     .put(UsersService.updateByUsername) //update user for a username
     .patch(UsersService.updateByUsername) //patch user for a username
     .delete(UsersService.deleteByUsername) //delete user for a username
